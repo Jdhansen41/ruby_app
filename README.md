@@ -26,3 +26,24 @@ Adding comments:
     4. Create comment form, add comments to show method for articles
     5. Add comment route to config/routes
     5. Generate comments controller
+    
+Tagging:
+-Used to assign articles to categories. Tag has MANY articles (potentially) and article can have MANY tags. Many to Many relationship
+-We'll call this Tagging. An Article has many taggings, and a tag has many taggings
+-We'll need two models:
+    Tag: name- a string
+    Tagging: tag_id and article_id
+    
+    bin/rails generate model Tag name:string
+    bin/rails generate model Tagging tag:references article:references
+    bin/rake db:migrate
+-models/article.rb      -> has_many :tags, through: :taggings
+-models/tag.rb          _> has_many :articles, through:  :taggings
+    Now we can use article.tags for all tags on an article, or tag.articles for all articles with a tag
+    
+    in the console:
+        a = Article.first
+        a.tags.create name: "tag1"
+        a.tags.create name: "tag2"
+        a.tags  <-Will list an array of tags on the article->
+-Generate tags controller
