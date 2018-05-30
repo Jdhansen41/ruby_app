@@ -47,3 +47,14 @@ Tagging:
         a.tags.create name: "tag2"
         a.tags  <-Will list an array of tags on the article->
 -Generate tags controller
+
+Paperclip:
+-A library that manages file attachments and uploading
+-dependent on ImageMagick so install that too:  
+        sudo apt-get update 
+        sudo apt-get install imagemagick
+        **Dont forget to run bundle install after this**
+-bin/rails generate migration add_paperclip_fields_to_article
+-go to the db migration created, add columns then run rake db:migrate
+-Under article model add: has_attached_file :image
+validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
