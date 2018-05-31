@@ -7,12 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Comfortaa|Lobster|Montserrat" rel="stylesheet">
   </head>
 
   <body>
-    <p class='flash'><%= flash.notice %></p>
-    <div style="">
-      <h6 style="position: absolute; right: 20px; top: 0px; padding: 5px; height: 15px; background: #fcfcfc; width: 180px; border-radius: 5px;">
+    <div id="navBar">
+      <h2 style="position: absolute; left: 10px; font-family: 'Montserrat', sans-serif; color: #fafafa; top: -10px;">RailsBlog</h2>
+      <p class="gem"><i class="fas fa-gem"></i></p>
+      <h6>
           <% if logged_in? %>
             <%= "Logged in as #{current_user.username}" %>
             <%= link_to "(logout)", logout_path %>
@@ -21,6 +24,7 @@
           <% end %>
         </h6>
     </div>
+      <p class='flash'><%= flash.notice %></p>
         <div class="mainContain">
            <%= yield %>
         </div>

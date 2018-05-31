@@ -7,7 +7,7 @@ class AuthorSessionsController < ApplicationController
             redirect_back_or_to(articles_path, notice: "Logged in successfully")
         else
             flash.now.alert = "Login attempt failed"
-            render action:new
+            redirect_to(login_path, notice: "Login attempt failed")
         end
     end
     

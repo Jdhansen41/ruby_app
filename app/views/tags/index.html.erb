@@ -1,10 +1,15 @@
-<h1>All Tags</h1>
-<ul>
+<div class="heading">
+    <h1>All Tags</h1>    
+</div>
+
+<div class="mainSection">
+    <ul>
     <% @tags.each do |tag| %>
     <li>
         <%= link_to tag.name, tag_path(tag) %>
-        <h4><%= link_to "delete", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"} %></h4>
+        <button style="background: #ff5c5c; float: right;"><%= link_to "delete", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"} %> <%= tag.name%></button>
     </li>
     <% end %>
 </ul>
-<p><%= link_to "Back to Articles", articles_path%></p>
+<p><%= link_to "Back to Articles", articles_path%></p>    
+</div>

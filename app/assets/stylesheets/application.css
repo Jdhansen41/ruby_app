@@ -14,25 +14,47 @@
  *= require_self
  */
  
+ 
+ 
  body{
+     margin: 0;
+     padding: 0;
     font-family: Arial;  
     background: url('https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
  }
+ 
+ #navBar{
+     position: fixed;
+     top: 0px;
+     width: 100%;
+     background: #2A5775;
+     height: 50px;
+ }
+ #navBar h6{
+     position: absolute;
+     right: 10px;
+     top: -5px;
+     color: #fafafa;
+ }
+ #navBar a{
+     color: #fafafa;
+ }
 
 .mainContain{
-    width: 100%;
+    width: 60%;
+    min-width: 350px;
     max-width: 900px;
-    margin: 50px auto;
+    margin: 100px auto;
     box-shadow: 0px 5px 20px gray;
     border-radius: 10px;
-    background: #FCFCFC;
+    background: #FAFAFA;
 }
 
 .heading{
     padding-top: 10px;
     width: 100%;
     height: 100px;
-    background: #279AF1;
+    background: #2A5775;
 }
 
 .mainSection{
@@ -45,6 +67,7 @@
 }
 
 h1{
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #F7F7FF;
     font-siZE: 40px;
@@ -63,6 +86,7 @@ li{
 a{
     text-decoration: none;
     color: #222222;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -79,4 +103,62 @@ button a{
 
 .new-article{
     display: block;
+}
+
+.flash{
+    color: white;
+    text-align: center;
+    margin: 70px auto;
+    margin-bottom: 0px;
+    width: 300px;
+}
+
+.gem{
+    position: absolute; left: 130px; top: -5px; color: #fafafa; font-size: 20px;
+}
+
+.submit{
+    padding: 5px;
+    border-radius: 3px;
+    border: 0px;
+    background: #2A5775;
+    color: #fafafa;
+}
+
+.form{
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: 	#f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    width: 200px;
+}
+.form-body{
+    max-width: 100%;
+    max-height: 200px;
+    min-width: 200px;
+    min-height: 100px;
+}
+
+.form:focus{
+    outline: none;
+    border: 3px solid #428bca;
+    box-shadow: none;
+}
+
+.image{
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media screen and (max-width: 550px){
+    h1{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 800px) and (min-width: 550px){
+    h1{
+        font-size: 30px;
+    }
 }
