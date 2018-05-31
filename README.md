@@ -58,3 +58,18 @@ Paperclip:
 -go to the db migration created, add columns then run rake db:migrate
 -Under article model add: has_attached_file :image
 validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+
+
+Authentication:
+-We'll use a gem called sorcery. Type it in Gemfile then run bundle
+-This makes it easy to get running by providing a generator to create a model representing our user and the required data migrations to support authentication
+-bin/rails generate sorcery:install --model=Author -->Preferences, changes User to Author
+-Added username column to migration, then bin/rake db:migrate
+-Create controller for Author: bin/rails generate scaffold_controller Author username:string email:string password:password password_confirmation:password
+
+**Rails has two scaffold generators: scaffold and scaffold_controller. The scaffold generator generates the model, 
+controller and views. The scaffold_controller will generate the controller and views. We are generating a 
+scaffold_controller instead of scaffold because Sorcery has already defined for us an Author model.**
+-update routes.rb file to include resources :authors
+
+-Create endpoints for logging in and out bin/rails generate controller AuthorSessions

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_200918) do
+ActiveRecord::Schema.define(version: 2018_05_30_224330) do
 
 # Could not dump table "articles" because of following StandardError
 #   Unknown type 'String' for column 'image_content_type'
+
+  create_table "authors", force: :cascade do |t|
+    t.string "username", null: false
+    t.string "email", null: false
+    t.string "crypted_password"
+    t.string "salt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_authors_on_email", unique: true
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "author_name"

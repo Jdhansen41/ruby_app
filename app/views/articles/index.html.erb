@@ -1,10 +1,18 @@
-<h1>All Articles</h1>
-<ul id="articles">
+<div class="heading">
+    <h1>All Articles</h1>    
+</div>
+<div class="mainSection">
+    <ul id="articles">
     <% @articles.each do |article| %>
     <li>
         <%= link_to article.title, article_path(article) %>
     </li>
     <% end %>
 </ul>
-<h3><%= link_to "View All Tags", tags_path %></h3>
-<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+<button style="background: #60656F;"><%= link_to "View All Tags", tags_path %></button>
+<% if logged_in? %>
+<button style="background: #279AF1;"><%= link_to "Create a New Article", new_article_path, class: "new_article" %></button>
+<% end %>    
+</div>
+
+<!--Only show if logged in-->
