@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_224330) do
+ActiveRecord::Schema.define(version: 2018_06_01_124909) do
 
 # Could not dump table "articles" because of following StandardError
 #   Unknown type 'String' for column 'image_content_type'

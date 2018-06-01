@@ -3,6 +3,7 @@
         <h1><%= @article.title %></h1>
     </div>
     <div class="mainSection">
+        <p style="color: gray;">Views: <%= @article.viewCount %></p>
         <p style="color: gray;">
         Tags:
         <% @article.tags.each do |tag| %>
@@ -14,7 +15,6 @@
             <%= image_tag @article.image.url, class: "image" %>
         <% end %>
     </p>
-    
     <p><%= @article.body %></p>
     
     <h4>Comments (<%= @article.comments.size %>)</h4>

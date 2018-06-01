@@ -7,12 +7,17 @@ class ArticlesController < ApplicationController
     
     def show
         @article = Article.find(params[:id])
+        #Views counter Logic
+        a = @article.viewCount += 1
+        @article.update_attribute "viewCount", a
+        #
         @comment = Comment.new
         @comment.article_id = @article.id
     end
     
     def create
         @article = Article.new(article_params)
+        @article.viewCount = 0;
         @article.save
         flash.notice = "Article '#{@article.title}' created!"
         

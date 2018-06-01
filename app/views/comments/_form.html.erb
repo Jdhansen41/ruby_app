@@ -2,11 +2,11 @@
  <%= form_for [@article, @comment] do |f| %>
     <p>
         <%= f.label :author_name, "Your Name" %><br />
-        <%= f.text_field :author_name, class: "form" %>
+        <%= f.text_field :author_name, class: "form", :required => true %> <!--HTML5 require attr to make sure can't be submitted blank-->
     </p>
     <p>
         <%= f.label :body, "Your Comment" %><br />
-        <%= f.text_area :body, class: "form form-body" %>
+        <%= f.text_area :body, class: "form form-body", :required => true %>
     </p>
     <p>
         <%= f.submit 'Submit', class: "submit" %>

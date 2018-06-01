@@ -19,7 +19,7 @@
  body{
      margin: 0;
      padding: 0;
-    font-family: Arial;  
+    font-family: Arial; 
     background: url('https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
  }
  
@@ -29,6 +29,7 @@
      width: 100%;
      background: #2A5775;
      height: 50px;
+     box-shadow: 0px 1px 5px black;
  }
  #navBar h6{
      position: absolute;
@@ -42,7 +43,7 @@
 
 .mainContain{
     width: 60%;
-    min-width: 350px;
+    min-width: 400px;
     max-width: 900px;
     margin: 100px auto;
     box-shadow: 0px 5px 20px gray;
@@ -115,6 +116,11 @@ button a{
 
 .gem{
     position: absolute; left: 130px; top: -5px; color: #fafafa; font-size: 20px;
+    transition: all linear 600ms;
+}
+
+.gem:hover{
+    color: #EE1C25;
 }
 
 .submit{

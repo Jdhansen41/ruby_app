@@ -2,4 +2,7 @@
     <h5 style="margin-top: 10px;">Comment by <%= comment.author_name %>:</h5>
     <p style="font-size: 12px;"><%= comment.body %></p>
     <p style="color: gray; font-size: 10px;">Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at)%> later</p>
+    <% if logged_in? %>
+        <button><%= link_to "delete", [@article, comment], method: :delete, data: {confirm: "Really delete the comment?"} %></button>
+    <% end %>
 </div>
